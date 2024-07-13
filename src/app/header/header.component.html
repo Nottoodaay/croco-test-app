@@ -1,8 +1,12 @@
-<header>
-  <div>
-    <a href="/">Croco Test</a>
+<header class="w-[100vw] flex flex-col justify-between">
+  <div class="flex justify-between p-5">
+    <div>
+      <a href="/" class="text-4xl font-bold text-lime-500">Croco Test</a>
+    </div>
+    <div class="text-lg font-bold">
+      {{ currentDate | date : "medium" }}
+    </div>
   </div>
-  <div>
-    {{ currentDate | date : "medium" }}
-  </div>
+
+  <app-navigation />
 </header>

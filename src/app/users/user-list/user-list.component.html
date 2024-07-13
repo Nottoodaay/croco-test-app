@@ -1,17 +1,22 @@
 @for (user of users; track user.id) {
-<div>
-  <h4>{{ user.name }}</h4>
-  <div>
-    <h3>phone:</h3>
-    <p>{{ user.phone }}</p>
+<div
+  class="flex flex-col gap-2 w-[400px] items-center h-fit border-2 border-black m-3 p-3"
+>
+  <h4 class="text-lg font-bold">{{ user.name }}</h4>
+  <div class="flex gap-2 items-baseline">
+    <h3 class="text-lg font-bold">phone:</h3>
+    <p class="text-base font-semibold">{{ user.phone }}</p>
   </div>
-  <div>
-    <h3>mail:</h3>
-    <p>{{ user.email }}</p>
+  <div class="flex gap-2 items-baseline">
+    <h3 class="text-lg font-bold">mail:</h3>
+    <p class="text-base font-semibold">{{ user.email }}</p>
   </div>
-  <div>
-    <h3>company:</h3>
-    <p>{{ user.company.name }}</p>
+  <div class="flex gap-2 items-baseline">
+    <h3 class="text-lg font-bold">company:</h3>
+    <p class="text-base font-semibold">{{ user.company.name }}</p>
   </div>
+  <button class="w-[100px] h-[40px] bg-cyan-600 rounded text-white">
+    Get Posts
+  </button>
 </div>
 }
