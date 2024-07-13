@@ -1,0 +1,24 @@
+<div
+  class="w-[300px] h-fit md:w-[500px] md:h-[400px] flex flex-col items-center justify-center md:gap-11 p-4"
+>
+  <div class="flex flex-col items-center ont-bold">
+    <div class="flex items-baseline">
+      <h4 class="font-bold">title:</h4>
+      <p>{{ post?.title }}</p>
+    </div>
+
+    <div class="flex items-baseline">
+      <h4 class="font-bold">Body:</h4>
+      <p>{{ post?.body }}</p>
+    </div>
+  </div>
+  <div mat-dialog-actions>
+    <button
+      mat-button
+      (click)="closePopup()"
+      class="w-[100px] h-[30px] rounded bg-slate-600 text-white"
+    >
+      Close
+    </button>
+  </div>
+</div>
