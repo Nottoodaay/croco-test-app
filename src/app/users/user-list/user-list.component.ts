@@ -1,6 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { User } from '../../interfaces';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-list',
@@ -11,6 +12,7 @@ import { User } from '../../interfaces';
 })
 export class UserListComponent implements OnInit {
   public httpClient = inject(HttpClient);
+  private router = inject(Router);
   users: User[] = [];
 
   ngOnInit(): void {
@@ -21,5 +23,9 @@ export class UserListComponent implements OnInit {
           this.users = data;
         },
       });
+  }
+
+  userPosts(userId: number): void {
+    this.router.navigate(['/users/posts', userId]);
   }
 }

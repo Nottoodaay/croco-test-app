@@ -15,7 +15,10 @@
     <h3 class="text-lg font-bold">company:</h3>
     <p class="text-base font-semibold">{{ user.company.name }}</p>
   </div>
-  <button class="w-[100px] h-[40px] bg-cyan-600 rounded text-white">
+  <button
+    (click)="userPosts(user.id)"
+    class="w-[100px] h-[40px] bg-cyan-600 rounded text-white"
+  >
     Get Posts
   </button>
 </div>
