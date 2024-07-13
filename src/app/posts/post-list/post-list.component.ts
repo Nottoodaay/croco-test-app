@@ -16,7 +16,7 @@ export class PostListComponent implements OnInit {
 
   public httpClient = inject(HttpClient);
 
-  posts: any[] = [];
+  posts: Post[] = [];
 
   ngOnInit(): void {
     this.httpClient

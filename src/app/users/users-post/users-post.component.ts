@@ -1,6 +1,8 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Post } from '../../interfaces';
+import { PopupService } from '../../posts/popup/popup.service';
 
 @Component({
   selector: 'app-users-post',
@@ -13,9 +15,12 @@ export class UsersPostComponent {
   public httpClient = inject(HttpClient);
   userId!: number;
 
-  posts: any[] = [];
+  posts: Post[] = [];
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private route: ActivatedRoute,
+    private popUpService: PopupService
+  ) {}
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
@@ -30,5 +35,8 @@ export class UsersPostComponent {
           },
         });
     }
+  }
+  openPopup(post: Post) {
+    this.popUpService.openPopup(post);
   }
 }

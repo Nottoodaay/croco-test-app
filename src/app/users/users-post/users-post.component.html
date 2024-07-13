@@ -3,11 +3,14 @@
 </div>
 @for (post of posts; track post.id) {
 <div
-  class="flex flex-col m-3 w-[500px] h-32 items-center justify-center border-2 border-black cursor-pointer"
+  (click)="openPopup(post)"
+  class="flex flex-col m-3 w-[300px] md:w-[500px] h-32 items-center justify-center border-2 border-black cursor-pointer"
 >
   <div class="flex flex-col">
     <h2 class="text-lg text-center font-bold">Title:</h2>
-    <p class="text-base text-center font-semibold case">{{ post.title }}</p>
+    <p class="text-base text-center font-semibold text-wrap px-3 case">
+      {{ post.title }}
+    </p>
   </div>
 </div>
 }
